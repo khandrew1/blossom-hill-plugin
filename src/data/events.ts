@@ -32,4 +32,3 @@ export const demoHome: HomeData = {
     estimatedGuests: 150,
   }],
 };
-

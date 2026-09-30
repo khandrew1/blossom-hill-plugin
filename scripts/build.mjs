@@ -28,4 +28,3 @@ await build({
   banner: { js: 'import { createRequire } from "node:module"; const require = createRequire(import.meta.url);' },
 });
 console.log("Built dist/home.html and dist/server.js (self-contained plugin runtime).");
-

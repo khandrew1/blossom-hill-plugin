@@ -37,4 +37,3 @@ if (window.parent === window) {
     root.render(<p className="loading" role="alert">Unable to connect to the Blossom Hill host.</p>);
   }
 }
-

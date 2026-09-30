@@ -76,4 +76,3 @@ export function Home({ data }: { data: HomeData }) {
     </div>
   );
 }
-

@@ -78,4 +78,3 @@ a { color: inherit; }
   .sample-note, .event-placeholder { margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .event-card { transition: none; } .event-card:hover { transform: none; } }
-
