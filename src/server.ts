@@ -82,8 +82,8 @@ const httpServer = createHttpServer(async (request, response) => {
   }
 });
 
-// Loopback by default; deployment supplies HOST=0.0.0.0 and PORT.
-const host = process.env.HOST ?? "127.0.0.1";
+// Bind all interfaces for deployment; local checks explicitly use loopback.
+const host = process.env.HOST ?? "0.0.0.0";
 const port = Number(process.env.PORT ?? 3000);
 httpServer.listen(port, host, () => {
   const address = httpServer.address();

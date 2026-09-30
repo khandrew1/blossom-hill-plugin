@@ -21,7 +21,7 @@ The homepage opens at http://127.0.0.1:3000 and Streamable HTTP MCP is served at
 - `src/app/styles.css`: layout and the existing Blossom card's image overlays and typography.
 - `src/app/main.tsx`: the MCP App bridge, initial tool result and host theme.
 - `src/server.ts`: one read-only tool and one bundled UI resource.
-- `.codex-plugin/plugin.json`: plugin identity and display name; `.mcp.json` connects to the local HTTP endpoint. After deployment, replace its URL with the remote `/mcp` endpoint.
+- `.codex-plugin/plugin.json`: plugin identity and display name; `.mcp.json` connects Codex to the deployed Streamable HTTP endpoint. For local development, use `http://127.0.0.1:3000/mcp`.
 - `scripts/build.mjs`: bundles the UI, image, CSS and server into `dist/`.
 
 ## SDK surfaces used
@@ -50,9 +50,9 @@ Deploy this repository to Manufact Demo Org with:
 
 - Build command: `npm ci && npm run build`
 - Start command: `npm start`
-- Environment: `HOST=0.0.0.0`; use the platform-provided `PORT` (defaults to 3000).
+- Environment: use the platform-provided `PORT` (defaults to 3000). `HOST` defaults to `0.0.0.0`; set `HOST=127.0.0.1` for loopback-only local development.
 - MCP endpoint: `/mcp`; health endpoint: `/health`.
 
 The server uses stateless Streamable HTTP. It serves fictional, read-only demo data and needs no credentials. Each request creates a fresh MCP server and transport. The homepage resource embeds its image, JavaScript and CSS, so it needs no separate asset host.
 
-To check a deployed endpoint, run `MCP_URL=https://YOUR-HOST/mcp npm test`.
+To check a deployed endpoint, run `MCP_URL=https://calm-steel-fqshc.run.mcp-use.com/mcp npm test`.
