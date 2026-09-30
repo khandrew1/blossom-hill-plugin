@@ -28,7 +28,9 @@ if (!url) {
 const client = new Client({ name: "blossom-hill-check", version: "0.1.0" });
 try {
   const health = await fetch(new URL("/health", url));
-  assert.deepEqual(await health.json(), { status: "ok" });
+  assert.equal(health.status, 200);
+  // Hosted platforms may provide their own health payload.
+  if (serverProcess) assert.deepEqual(await health.json(), { status: "ok" });
   assert.equal((await fetch(url)).status, 405);
   await client.connect(new StreamableHTTPClientTransport(new URL(url)));
   const { tools } = await client.listTools();
