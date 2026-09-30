@@ -1,0 +1,38 @@
+{
+  "name": "blossom-hill-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A homepage-only Blossom Hill Codex Plugin Extension.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && npm start",
+    "preview": "node scripts/preview.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "node scripts/check-protocol.mjs",
+    "verify": "npm run typecheck && npm run lint && npm run build && npm test",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "1.7.5",
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "@openai/mcp-extensions": "0.1.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.11.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.0"
+  }
+}

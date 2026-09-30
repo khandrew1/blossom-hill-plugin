@@ -1,0 +1,25 @@
+{
+  "name": "blossom-hill-plugin",
+  "version": "0.1.0",
+  "description": "Browse upcoming events in the Blossom Hill homepage.",
+  "author": {
+    "name": "Andrew Khadder"
+  },
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Blossom Hill",
+    "shortDescription": "Your upcoming events, in one place.",
+    "longDescription": "A small learning project with a native sidebar homepage and a sample Blossom Hill Cafe event.",
+    "developerName": "Andrew Khadder",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "defaultPrompt": [
+      "Open the Blossom Hill homepage."
+    ],
+    "brandColor": "#E85D3F"
+  }
+}
+
